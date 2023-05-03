@@ -1,0 +1,33 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "project common custom library",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "vue-tsc" : "vue-tsc --emitDeclarationOnly"
+  },
+  "types" : "./dist/main.d.ts",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "publishConfig": {
+    "directory" : "dist"
+  },
+  "main": "./dist/common.umd.cjs",
+  "module": "./dist/common.js",
+  "exports": {
+    ".": {
+      "import": "./dist/common.js",
+      "require": "./dist/common.umd.cjs"
+    },
+    "./*" : "./*"
+  },
+  "dependencies": {
+    "vue": "^3.2.38"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
+  }
+}
