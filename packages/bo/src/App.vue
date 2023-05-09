@@ -2,22 +2,17 @@
   <test-component />
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/sample">Sample</router-link>
   </nav>
   <router-view />
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-// import { TestComponent, Utils } from "common";
+import { useRouter } from "vue-router";
 
-export default defineComponent({
-  name: "App",
-  // components: { TestComponent },
-  created() {
-    // console.log(Utils);
-  },
-});
+const router = useRouter();
+
 </script>
 
 <style lang="less">
