@@ -1,11 +1,22 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import { Quasar, SessionStorage, Notify } from 'quasar'
+// @ts-ignore
+import App from "./App.vue";
 
-import './assets/main.css'
+import router from "./router";
 
-const app = createApp(App)
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+// Import Quasar css
+import 'quasar/dist/quasar.css'
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.use(Quasar, {
+    plugins: { // import Quasar plugins and add here
+        SessionStorage,
+        Notify
+    },
+}).mount("#app");
